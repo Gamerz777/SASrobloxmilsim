@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Website</title>
+    <style>  
+        /* General reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Wrapper for the blurred background image */
+        .background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .background-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(10px); /* Apply blur effect */
+            z-index: -1;
+        }
+
+        /* Header box at the top */
+        .header {
+            width: 100%;
+            height: 100px; /* Set the height of the header */
+            background-color: #333; /* Dark background */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Padding for the header */
+            box-sizing: border-box; /* Ensure padding is included in total width/height */
+            position: fixed; /* Fix the header at the top */
+            top: 0;
+            z-index: 10; /* Ensure header is above other content */
+        }
+
+        /* Heading inside the header */
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Logo on the right side of the header */
+        .logo img {
+            height: 50px; /* Set the logo height */
+            width: auto;
+        }
+
+        /* Main content */
+        .content {
+            position: relative;
+            z-index: 1; /* Ensure content is above the background */
+            text-align: center;
+            color: blue;
+            font-family: Arial, sans-serif;
+            padding: 120px 20px 20px; /* Add top padding to avoid overlap with fixed header */
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 1200px; /* Limit width of the content */
+        }
+
+        /* Fade-in effect */
+        .content {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Styles for the heading */
+        h1 {
+            font-size: 3em;
+            margin: 0.5em 0;
+            color: rgb(0, 162, 255);
+            text-shadow: 
+                3px 3px 5px rgba(0, 0, 0, 0.5), /* Bottom right shadow */
+                -3px -3px 5px rgba(0, 0, 0, 0.5), /* Top left shadow */
+                3px -3px 5px rgba(0, 0, 0, 0.5), /* Bottom left shadow */
+                -3px 3px 5px rgba(0, 0, 0, 0.5); /* Top right shadow */
+        }
+
+        /* Styles for the text */
+        p {
+            font-size: 1.2em;
+            margin: 1em 0;
+            color: rgb(0, 255, 102);
+            text-shadow: 
+                1px 1px 3px rgba(0, 0, 0, 0.3), /* Simple shadow for text */
+                -1px -1px 3px rgba(0, 0, 0, 0.3); /* Reverse shadow */
+        }
+
+        /* Styles for links */
+        a {
+            display: inline-flex;
+            align-items: center; /* Align logo and text horizontally */
+            margin: 1em;
+            padding: 0.5em 1em;
+            background-color: #00ff26;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Custom logo in links */
+        a img {
+            height: 20px; /* Size of the logo */
+            width: auto;
+            margin-right: 10px; /* Space between logo and text */
+        }
+
+        /* Footer Rectangle Box at the bottom */
+        .footer-rectangle {
+            width: 100%;
+            background-color: #222; /* Dark background */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .footer-rectangle p {
+            margin: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Wrapper for background image with blur effect -->
+    <div class="background-wrapper">
+        <img src="C:\Users\manas\Downloads\banner-1920x1080.jpg" alt="Background Image">
+    </div>
+
+    <!-- Header with rectangle box -->
+    <div class="header">
+        <h1>22nd SAS Roblox Milsim</h1>
+        <div class="logo">
+            <img src="C:\Users\manas\Downloads\special-air-service-vector-logo-free-115740385094uydaiztb8-removebg-preview.png" alt="Logo"> <!-- Placeholder logo -->
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>Welcome to 22nd SAS</h1>
+        <p>We offer an amazing Milsim experience. We deploy in Kunduz city in Afghanistan made by Mobin. Join us and become the part of the UKSF, for more info join our discord!</p>
+        
+        <!-- Link with custom logo and text -->
+        <a href="https://discord.gg/4W8p44VvC3">
+            <img src="C:\Users\manas\Downloads\discord-logo-0.png" alt=""> Join our discord!
+        </a>
+    </div>
+
+    <!-- Footer Rectangle Box with Text -->
+    <div class="footer-rectangle">
+        <p>This group does not represent the original SAS. And this group is purely fictional.</p>
+    </div>
+
+</body>
+</html>
